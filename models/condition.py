@@ -40,7 +40,7 @@ class Condition:
         cursor.execute("SELECT * from " + self.table_name)
         data = cursor.fetchone()
         con.close()
-        return random.choice([k for k in data.keys() if k not in ['id', 'trades'] and isinstance(data[k], (int, float, complex))])
+        return random.choice([k for k in data.keys() if k not in ['id', 'trades', 'start'] and isinstance(data[k], (int, float, complex))])
 
     @staticmethod
     def get_random_operator():
